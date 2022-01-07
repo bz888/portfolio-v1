@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>someZine - Birds</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/lightbox.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="../js/lightbox-plus-jquery.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo"><a href="../index.html">someZine</a></div>
+                <ul class="menu-list">
+                    <div class="icon cancel-btn"><i class="fas fa-times"></i></div>
+                    <li><a href="../gallery.html">Go Back</a></li>
+                </ul>
+                <div class="icon menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </nav>
+
+        <div class="page-title"><h1>Birds</h1></div>
+        
+        <div class="page-video">
+            <video controls autoplay src="../videos/birds/vid-1.mp4"></video>
+        </div>
+
+        <div class="page-text"><p>I had a dream, how I wish I was a bird. So why can’t I be a bird?
+                                <br>But I do look very sad and emotionless, maybe being a bird should remain as a dream.</p>
+        </div>
+
+        <div class="gallery">
+            <a href="../images/birds/img-1.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-1.jpeg"></a>
+            <a href="../images/birds/img-2.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-2.jpeg"></a>
+            <a href="../images/birds/img-3.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-3.jpeg"></a>
+            <a href="../images/birds/img-4.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-4.jpeg"></a>
+            <a href="../images/birds/img-5.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-5.jpeg"></a>
+            <a href="../images/birds/img-6.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-6.jpeg"></a>
+            <a href="../images/birds/img-7.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-7.jpeg"></a>
+            <a href="../images/birds/img-8.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-8.jpeg"></a>
+            <a href="../images/birds/img-9.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-9.jpeg"></a>
+            <a href="../images/birds/img-10.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-10.jpeg"></a>
+            <a href="../images/birds/img-11.jpeg" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/birds/img-11.jpeg"></a>
+        </div>        
+
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navbar");
+            const menu = document.querySelector(".menu-list");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            
+            menuBtn.onclick = ()=>{
+                menu.classList.add("active");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabledScroll");
+            }
+            cancelBtn.onclick = ()=>{
+                menu.classList.remove("active");
+                menuBtn.classList.remove("hide");
+                body.classList.remove("disabledScroll");
+            }
+
+            window.onscroll = ()=>{
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+            }
+        </script>
+    </body>
+</html>

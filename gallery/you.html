@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>someZine - Me</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/lightbox.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="../js/lightbox-plus-jquery.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo"><a href="../index.html">someZine</a></div>
+                <ul class="menu-list">
+                    <div class="icon cancel-btn"><i class="fas fa-times"></i></div>
+                    <li><a href="../gallery.html">Go Back</a></li>
+                </ul>
+                <div class="icon menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </nav>
+
+        <div class="page-title"><h1>Just me thats not me but me</h1></div>
+
+        <div class="page-text"><p>Calculated mistakes of the visual, unintended accident of the real. To lose control of the virtual, is to realise you have yet to understand it. To lose control in the real, sometimes your capabilities only go so far.</p></div>
+
+        <div class="gallery">
+            <a href="../images/you/img-1.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-1.PNG"></a>
+            <a href="../images/you/img-2.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-2.PNG"></a>
+            <a href="../images/you/img-7.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-7.PNG"></a>
+            <a href="../images/you/img-8.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-8.PNG"></a>
+            <a href="../images/you/img-9.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-9.PNG"></a>
+            <a href="../images/you/img-10.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-10.PNG"></a>
+            <a href="../images/you/img-11.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-11.PNG"></a>
+            <a href="../images/you/img-12.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-12.PNG"></a>
+            <a href="../images/you/img-13.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-13.PNG"></a>
+            <a href="../images/you/img-14.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/you/img-14.PNG"></a>
+        </div>        
+
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navbar");
+            const menu = document.querySelector(".menu-list");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            
+            menuBtn.onclick = ()=>{
+                menu.classList.add("active");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabledScroll");
+            }
+            cancelBtn.onclick = ()=>{
+                menu.classList.remove("active");
+                menuBtn.classList.remove("hide");
+                body.classList.remove("disabledScroll");
+            }
+
+            window.onscroll = ()=>{
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+h1 {
+    font-weight: 600;
+}
+canvas {
+    display: block;
+}
+html {
+    scroll-behavior: smooth;
+}
+p {
+    font-size: 15px;
+    line-height: 1.8rem;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+}
+.content {
+    max-width: 95%;
+    margin: auto;
+    padding: 0px 30px;
+}
+.navbar {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+.navbar.sticky {
+    background: white;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+.navbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+}
+.navbar .menu-list {
+    display: inline-flex;
+}
+.menu-list li {
+    list-style: none;
+}
+.menu-list li a {
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 25px;
+    transition: all 0.3s ease;
+}
+.menu-list li.active a {
+    color:grey;
+}
+.menu-list li a:hover {
+    color: grey;
+}
+.banner {
+    margin-bottom: 50px;
+    height: 100vh;
+}
+.banner #myVideo {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+}
+.banner .goDown {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    cursor: pointer;
+    height: 60px;
+    background: none;
+    bottom: 0;
+    right: 50%;
+    left: 50%;
+    transition: all 0.2s linear;
+}
+.goDown:hover {
+    font-size: 35px;
+}
+.icon {
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+.icon.cancel-btn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+#writing {
+    margin: 0 auto;
+    text-align: center;
+}
+#wrapper {
+    padding: 70px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+#test {
+    padding-top: 70px;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 500px;
+    text-align: center;
+}
+.testbox {
+    max-width: 949px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    outline: 3px solid black;
+}
+.testbox img {
+    width: 100%;
+    display: block;
+    transition: .8s ease-in-out;
+}
+.testbox:hover a img {
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+
+
+#writing-section {
+    padding: 40px 0;
+    margin: 0 auto;
+    text-align: center;
+}
+.circular {
+    cursor: pointer;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid black;
+    transition: all 0.5s ease;
+    display: inline-block;
+}
+.circular:hover {
+    background-color: black;
+    color: white;
+}
+a {
+    text-decoration: none;
+}
+.cta {
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px 5px;
+}
+.cta:hover {
+    border-color: black;
+    border-width: 2px;
+    border-bottom-style: solid;
+}
+/* Home Page */
+#about {
+    padding-top: 65px;
+    margin-bottom: 0px;
+}
+.home-title {
+    margin: 0 auto;
+    font-size: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.home-section {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.button-box {
+    max-width: 20vh;
+    height: auto;
+    display: inline-block;
+    padding-top: 70px;
+    text-align: left;
+}
+.hover-box {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+.hover-box img {
+    width: 100%;
+    display: block;
+    transition: .8s ease-in-out;
+}
+.hover-box:hover a img {
+    opacity: 0.6;
+    transform: scale(1.1);
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* End Home Page */
+
+/* Gallery Page */
+.gallery {
+    margin: 0px auto;
+    text-align: center;
+}
+.gallery img {
+    transition: 1s;
+    padding: 15px;
+    width: 450px;
+    height: 266.25px;
+}
+.gallery.home img { 
+    width: 750px;
+    height: 435px;
+}
+.gallery img:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+/* End Gallery Page */
+
+#writing-title {
+    padding-bottom: 40px;
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 1250px;
+    text-align: left;
+}
+#text-title {
+    max-width: 750px;
+    font-size: 18px;
+}
+.box {
+    max-width: 800px;
+    height: auto;
+    display: inline-block;
+    padding-right: 30px;
+    padding-left: 30px;
+    vertical-align: top;
+    margin: 10px;
+    text-align: left;
+}
+.box h1 {
+    display: inline-block;
+}
+.title-box {
+    max-width: 800px;
+    height: auto;
+    display: inline-block;
+    padding-right: 30px;
+    padding-left: 30px;
+    vertical-align: top;
+    margin: 20px;
+    text-align: left;
+}
+.text-box {
+    max-width: 800px;
+    height: auto;
+    display: inline-block;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin: 20px;
+    text-align: left;
+}
+.text-box img {
+    width: 100%;
+}
+.section-title {
+    min-width: 200px;
+    max-width: 200px;
+    font-size: 18px;
+}
+.text-box p {
+    margin-bottom: 10px;
+}
+.section {
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.bottom {
+    padding-top: 30px;
+}
+.last {
+    padding-bottom: 50px;
+}
+.col {
+    max-width: 420px;
+	display: block;
+	float:left;
+    margin: 1% 1% 1% 2%;
+    text-align: left;
+    padding: 1px 20px;
+    box-shadow: -5px 5px 20px -15px grey;
+    transition: 0.5s;
+}
+.col:hover {
+    box-shadow: -10px 15px 20px -15px grey;
+}
+.col h1 {
+    font-size: 25x;
+    padding-top: 15px;
+    padding-bottom: 60px;
+}
+.col p {
+    padding-bottom: 100px;
+}
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+@media only screen and (max-width: 868px) {
+	.span_1_of_3 { width: 100%; }
+}
+
+@media (max-width: 868px) {
+    body.disabledScroll {
+        overflow: hidden;
+    }
+    .icon {
+        display: block;
+    }
+    .icon.hide {
+        display: none;
+    }
+    .navbar .menu-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 400px;
+        background: white;
+        display: block;
+        padding: 40px 0;
+        text-align: center;
+        transition: all 0.7s ease;
+    }
+    .navbar .menu-list.active {
+        left: 0%;
+    }
+    .navbar .menu-list li {
+        margin-top: 45px;
+    }
+    .navbar .menu-list li a {
+        font-size: 23px;
+    }
+    .gallery.home img {
+        width: 100%;
+        height: auto;
+    }
+    .testbox img {
+        height: auto;
+        width: 100%;
+    }
+}
+.page-title {
+    margin: 0 auto;
+    font-size: 23px;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.page-text {
+    margin: 0 auto;
+    max-width: 750px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.page-text p {
+    font-size: 16px;
+}
+.page-video {
+    text-align: center;
+    padding-bottom: 50px;
+}
+.page-video video {
+    width: 75%;
+    height: auto;
+}
+.overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 1s;
+}
+.overlay-content {
+    position: relative;
+    max-width: 1000px;
+    text-align: left;
+    margin: 0 auto;
+    margin: 150px 75px;
+}
+.overlay-content p {
+    margin-bottom: 20px;
+}
+.overlay-content h1 {
+    color: black;
+    font-size: 50px;
+    padding-bottom: 200px;
+}
+.overlay a {
+    width: 45px;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+    margin-left: 70px;
+    margin-top: 2px;
+}
+.overlay .quote {
+    font-style: italic;
+    margin-left: 50px;
+}
+.overlay .reference {
+    padding-top: 20px
+}
+.overlay .logo {
+    position: absolute;
+}
+.overlay a:hover, .overlay a:focus {
+    color: green; 
+}
+.overlay .closebtn {
+    position: sticky; 
+    right: 20px; 
+    top: 0px;
+    margin-right: 20px;
+    font-size: 50px;
+    float: right;
+}

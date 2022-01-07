@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>someZine - Gallery</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/lightbox.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="js/lightbox-plus-jquery.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo"><a href="#">someZine</a></div>
+                <ul class="menu-list">
+                    <div class="icon cancel-btn"><i class="fas fa-times"></i></div>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li ><a href="writings.html">Writings</a></li>
+                    <li class="active"><a href="#">Gallery</a></li>
+                </ul>
+                <div class="icon menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </nav>
+
+        <div class="page-title"><h1>Your Promised Pictures</h1></div>
+
+        <div class="gallery home">
+            <a href="gallery/birds.html"><img src="images/birds/img-1.jpeg"></a>
+            <a href="gallery/box.html"><img src="images/frames/img-1.jpeg"></a>
+            <a href="gallery/trees.html"><img src="images/trees/img-1.jpeg"></a>
+            <a href="gallery/sauces.html"><img src="images/sauces/img-1.jpeg"></a>
+            <a href="gallery/land.html"><img src="images/land/img-1.jpeg"></a>
+            <a href="gallery/room.html"><img src="images/room/img-1.jpeg"></a>
+            <a href="gallery/cube.html"><img src="images/cube/img-1.jpeg"></a>
+            <a href="gallery/yoga.html"><img src="images/yoga/img-1.PNG"></a>
+            <a href="gallery/you.html"><img src="images/you/img-1.PNG"></a>
+            <a href="gallery/ar.html"><img src="images/ar/img-1.png"></a>
+        </div>        
+
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navbar");
+            const menu = document.querySelector(".menu-list");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            
+            menuBtn.onclick = ()=>{
+                menu.classList.add("active");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabledScroll");
+            }
+            cancelBtn.onclick = ()=>{
+                menu.classList.remove("active");
+                menuBtn.classList.remove("hide");
+                body.classList.remove("disabledScroll");
+            }
+
+            window.onscroll = ()=>{
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+            }
+        </script>
+    </body>
+</html>

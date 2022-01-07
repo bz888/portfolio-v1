@@ -1,24 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>someZine</title>
-  <link rel="stylesheet" href="main.css">
-</head>
-<body>
-  <div class="homeText">
-    <div class="home-title"><h1>someZine</h1></div>
-    <div class="home-section">
-        <p>To close the distance of reality, to satisfy the cravings of reproduction, to confess cravings of information, to embrace the pleasures of the universe, to live for the sake of reality, to love the world. The universe is nothing but a manifestation of our desires, values, aspirations, and the desire for reality. Pseudo.</p>
-    </div>
-    <div class="contents">
-      <ul>
-        <li><a href="photography.html">Photographs</a></li>
-        <li><a href="renderings.html">3D art works?</a></li>
-      </ul>
-    </div>
-</div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>someZine</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo"><a href="#">someZine</a></div>
+                <ul class="menu-list">
+                    <div class="icon cancel-btn">
+                        <i class="fas fa-times"></i>
+                    </div>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="writings.html">Writings</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+                <div class="icon menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+
+        <div class="banner">
+            <video src="videos/banner-video.mp4" autoplay loop id="myVideo"></video>
+            <a class="goDown" href="#about"><i class="fas fa-chevron-down"></i></a>
+        </div>
+
+        <!-- Background Audio for Home Page -->
+        <audio autoplay controls loop id="playAudio" style="display: none;"> 
+            <source src="audios/audio-bg.mp3" type="audio/mpeg">
+        </audio>
+
+        <div id="about">
+            <div class="home-title"><h1>someZine</h1></div>
+            <div class="home-section">
+                <p>To close the distance of reality, to satisfy the cravings of reproduction, to confess cravings of information, to embrace the pleasures of the universe, to live for the sake of reality, to love the world. The universe is nothing but a manifestation of our desires, values, aspirations, and the desire for reality. Pseudo.</p>
+                <br><br>
+                <p>So I sincerly ask, which path do you desire?</p>
+            </div>
+            
+            <div id="test">
+                <div class="testbox">
+                    <a href="writings.html"><img src="images/button.jpg" alt="">
+                        <div class="centered"><h1>Box One</h1></div>
+                    </a>
+                </div><div class="testbox">
+                    <a href="gallery.html"><img src="images/button.jpg" alt="">
+                        <div class="centered"><h1>Box Two</h1></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Setting standard autoplay volume
+            var gfg = document.getElementById("playAudio"); 
+            gfg.volume = 0.2;
+
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navbar");
+            const menu = document.querySelector(".menu-list");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            
+            menuBtn.onclick = ()=>{
+                menu.classList.add("active");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabledScroll");
+            }
+            cancelBtn.onclick = ()=>{
+                menu.classList.remove("active");
+                menuBtn.classList.remove("hide");
+                body.classList.remove("disabledScroll");
+            }
+
+            window.onscroll = ()=>{
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+            }
+        </script>
+    </body>
 </html>

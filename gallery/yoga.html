@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>someZine - Yoga Man</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/lightbox.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="../js/lightbox-plus-jquery.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="content">
+                <div class="logo"><a href="../index.html">someZine</a></div>
+                <ul class="menu-list">
+                    <div class="icon cancel-btn"><i class="fas fa-times"></i></div>
+                    <li><a href="../gallery.html">Go Back</a></li>
+                </ul>
+                <div class="icon menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </nav>
+
+        <div class="page-title"><h1>Yoga Man</h1></div>
+
+        <div class="page-text"><p>During the lockdown phase, I started doing a bunch of yoga. Now I am ever so flexible. These images are very real. On a good day I can touch my toes.</p></div>
+
+        <div class="gallery">
+            <a href="../images/yoga/img-1.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-1.PNG"></a>
+            <a href="../images/yoga/img-2.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-2.PNG"></a>
+            <a href="../images/yoga/img-3.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-3.PNG"></a>
+            <a href="../images/yoga/img-4.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-4.PNG"></a>
+            <a href="../images/yoga/img-5.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-5.PNG"></a>
+            <a href="../images/yoga/img-6.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-6.PNG"></a>
+            <a href="../images/yoga/img-7.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-7.PNG"></a>
+            <a href="../images/yoga/img-8.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-8.PNG"></a>
+            <a href="../images/yoga/img-9.PNG" data-lightbox="mygallery" data-title="Write Here.."><img src="../images/yoga/img-9.PNG"></a>
+        </div>        
+
+        <script>
+            const body = document.querySelector("body");
+            const navbar = document.querySelector(".navbar");
+            const menu = document.querySelector(".menu-list");
+            const menuBtn = document.querySelector(".menu-btn");
+            const cancelBtn = document.querySelector(".cancel-btn");
+            
+            menuBtn.onclick = ()=>{
+                menu.classList.add("active");
+                menuBtn.classList.add("hide");
+                body.classList.add("disabledScroll");
+            }
+            cancelBtn.onclick = ()=>{
+                menu.classList.remove("active");
+                menuBtn.classList.remove("hide");
+                body.classList.remove("disabledScroll");
+            }
+
+            window.onscroll = ()=>{
+                this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+            }
+        </script>
+    </body>
+</html>
